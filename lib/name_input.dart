@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_background/animated_background.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -7,6 +8,8 @@ import 'package:share_plus/share_plus.dart';
 
 class NameInput extends StatefulWidget {
   String? name;
+  // retrieve the name from persistent storage
+
   NameInput({Key? key, this.name}) : super(key: key);
 
   @override
@@ -160,12 +163,8 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                           backgroundColor:
                                               MaterialStateProperty.all(
                                                   Colors.orange)),
-                                      onPressed: () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => NameInput(
-                                                    name: nameController.text,
-                                                  ))),
+                                      onPressed: () => context
+                                          .go('/?query=${nameController.text}'),
                                       child: const Text('Submit')),
                                 ),
                                 SizedBox(width: width * 0.01),
@@ -179,7 +178,7 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                     onPressed: () => Share.share(
                                         subject:
                                             'Happy Independance Day wish By $name',
-                                        'https://play.google.com/store/apps/details?id=com.yuvraj.shareplus'),
+                                        'https://independanceday-56d4b.web.app/#/?query=$name'),
                                     child: const Text('Share '),
                                   ),
                                 ),
@@ -220,12 +219,8 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                       backgroundColor:
                                           MaterialStateProperty.all(
                                               Colors.orange)),
-                                  onPressed: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => NameInput(
-                                                name: nameController.text,
-                                              ))),
+                                  onPressed: () => context
+                                      .go('/?query=${nameController.text}'),
                                   child: const Text('Submit')),
                             ),
                             SizedBox(width: width * 0.01),
@@ -238,7 +233,7 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                 onPressed: () => Share.share(
                                     subject:
                                         'Happy Independance Day wish By $name',
-                                    'crm'),
+                                    'https://independanceday-56d4b.web.app/#/?query=$name'),
                                 child: const Text('Share '),
                               ),
                             ),
