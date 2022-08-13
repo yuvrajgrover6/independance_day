@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "188619711225",
+    "project_id": "independanceday-56d4b",
+    "storage_bucket": "independanceday-56d4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188619711225:android:928e8570b932cefcae3828",
+        "android_client_info": {
+          "package_name": "com.example.independance_day"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188619711225-24t2hhuiejvimentbm072sa2mjlnteif.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-hy_azBQ-MqNzWJqBo0LMlx7dxq1FaEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188619711225-24t2hhuiejvimentbm072sa2mjlnteif.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
