@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:independance_day/firebase_options.dart';
-import 'package:independance_day/pages/name_input.dart';
+import 'package:independance_day/name_input.dart';
 
 void main() async {
   await Firebase.initializeApp(
@@ -16,10 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Independance Day',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const NameInput());
+        home: NameInput());
   }
 }
