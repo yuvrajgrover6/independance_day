@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:animated_background/animated_background.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -89,42 +88,8 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                         color: Colors.green),
                                   ),
                                 ]))),
-                    condition
-                        ? Column(
-                            children: [
-                              SizedBox(
-                                height: 200,
-                                child: OverflowBox(
-                                  minHeight: 500,
-                                  maxHeight: 500,
-                                  child: Lottie.asset('assets/1.json',
-                                      fit: BoxFit.fill),
-                                ),
-                              ),
-                              const SizedBox(height: 120),
-                              SizedBox(
-                                height: 200,
-                                child: OverflowBox(
-                                  minHeight: 450,
-                                  maxHeight: 450,
-                                  child: Lottie.asset('assets/2.json',
-                                      fit: BoxFit.fill),
-                                ),
-                              ),
-                              const SizedBox(height: 120),
-                            ],
-                          )
-                        : Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Lottie.asset(
-                                'assets/1.json',
-                              ),
-                              const SizedBox(width: 50),
-                              Lottie.asset('assets/2.json',
-                                  height: width * 0.4),
-                            ],
-                          ),
+                    Image.network(
+                        'https://firebasestorage.googleapis.com/v0/b/independanceday-56d4b.appspot.com/o/image.png?alt=media&token=408c840e-9ae4-4c76-aea0-54b56e82bef5'),
                   ],
                 ),
                 Center(
