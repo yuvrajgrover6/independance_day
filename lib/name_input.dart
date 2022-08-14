@@ -21,9 +21,13 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final TextEditingController nameController = TextEditingController();
     String? name = widget.name;
+    String? urlName = name?.replaceAll(' ', '+');
+    nameController.addListener(() {
+      name = nameController.text;
+      urlName = name?.replaceAll(' ', '+');
+    });
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    final urlName = name?.replaceAll(' ', '+');
     final condition = (width < 800);
     return Scaffold(
       body: Center(
@@ -93,8 +97,8 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                 child: OverflowBox(
                                   minHeight: 500,
                                   maxHeight: 500,
-                                  child:
-                                      Lottie.asset('1.json', fit: BoxFit.fill),
+                                  child: Lottie.asset('assets/1.json',
+                                      fit: BoxFit.fill),
                                 ),
                               ),
                               const SizedBox(height: 120),
@@ -103,8 +107,8 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                 child: OverflowBox(
                                   minHeight: 450,
                                   maxHeight: 450,
-                                  child:
-                                      Lottie.asset('2.json', fit: BoxFit.fill),
+                                  child: Lottie.asset('assets/2.json',
+                                      fit: BoxFit.fill),
                                 ),
                               ),
                               const SizedBox(height: 120),
@@ -114,10 +118,11 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Lottie.asset(
-                                '1.json',
+                                'assets/1.json',
                               ),
                               const SizedBox(width: 50),
-                              Lottie.asset('2.json', height: width * 0.4),
+                              Lottie.asset('assets/2.json',
+                                  height: width * 0.4),
                             ],
                           ),
                   ],
@@ -227,10 +232,14 @@ class _NameInputState extends State<NameInput> with TickerProviderStateMixin {
                                 style: ButtonStyle(
                                     backgroundColor: MaterialStateProperty.all(
                                         Colors.green)),
-                                onPressed: () => Share.share(
-                                    subject:
-                                        'Happy Independance Day wish By $name',
-                                    'https://independanceday-56d4b.web.app/#/?query=$urlName'),
+                                onPressed: () {
+                                  print(
+                                      "https://independanceday-56d4b.web.app/#/?query=$urlName");
+                                  Share.share(
+                                      subject:
+                                          'Happy Independance Day wish By $name',
+                                      'https://independanceday-56d4b.web.app/#/?query=$urlName');
+                                },
                                 child: const Text('Share '),
                               ),
                             ),
